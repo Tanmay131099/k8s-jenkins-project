@@ -10,9 +10,9 @@ pipeline {
 
     stage('Deploy to Kubernetes') {
       steps {
-        sh 'kubectl version --client'
-        sh 'kubectl apply -f deployment.yaml'
-        sh 'kubectl apply -f service.yaml'
+        sh '/var/jenkins_home/bin/kubectl version --client'
+        sh '/var/jenkins_home/bin/kubectl apply -f deployment.yaml'
+        sh '/var/jenkins_home/bin/kubectl apply -f service.yaml'
       }
     }
   }
